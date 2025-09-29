@@ -5,7 +5,7 @@
 // Update()
 //
 
-// Replace()
+// ReplaceOne()
 // Sirve para reemplazar un documento ya existente, tambien con base en una busqueda
 // utilizando el metodo find()
 
@@ -34,3 +34,17 @@ db.movie.replaceOne({"Doc1": "Star Wars"}, {"Pelicula": "Star Wars", "Anio": 199
 // Si no existe no lo crea
 // db.collection.replaceOne({"nombreCampoRemplazar": "InfoReemplazar"}, {"PorEsteNombre": "PorEstaInfo"}, {upsert: false});
 db.movie.replaceOne({"Doc1": "Star Wars"}, {"Pelicula": "Star Wars", "Anio": 1997}, {upsert: false});
+
+
+// UpdateOne: 
+// db.collection.update({"nombreCampoActualizar": "InfoActualizar"}, {"PorEsteNombre": "PorEstaInfo"});
+db.movie.update({"Doc1": "Star Wars"}, {"Pelicula": "Star Wars", "Anio": 1997});
+
+// Actualiza la primera coincidencia o no pasandole el parametro {multi: boilean = true or false}
+// Actualiza todas las coincidencias
+// db.collection.update({"nombreCampoActualizar": "InfoActualizar"}, {"PorEsteNombre": "PorEstaInfo"}, {multi: true});
+db.movie.update({"Doc1": "Star Wars"}, {$set: {"Pelicula": "Star Wars", "Anio": 1997}}, {multi: true});
+
+// solo actualiza la prra coincidencia
+// db.collection.update({"nombreCampoActualizar": "InfoActualizar"}, {"PorEsteNombre": "PorEstaInfo"}, {multi: false});
+db.movie.update({"Doc1": "Star Wars"}, {"Pelicula": "Star Wars", "Anio": 1997}, {multi: false});

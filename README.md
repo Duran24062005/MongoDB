@@ -100,3 +100,4 @@ Ejemplo: `db.usuarios.find()`
 
 - 📚 [Docs](https://www.mongodb.com/)
 - 🚀 [Deploy](https://cloud.mongodb.com/v2/655a9f473dc5006ce2a81310#/overview?automateSecurity=true)
+- [Videos](https://drive.google.com/drive/folders/1j7DYUqLththJx8wVGlTuzwKw_ytTk_Ap?lfhs=2)

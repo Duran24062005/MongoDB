@@ -10,50 +10,58 @@
 // Documento simple
 // ================================
 // Ejemplo de documento con campos básicos
-{
-    "Pelicula": "Piratas del Caribe",
-    "Anio": "2003",
-    "Author": "Gore Verbinski",
-    "description": "Aventura en altamar con piratas y tesoros"
-}
+[
+    {
+        "Pelicula": "Piratas del Caribe",
+        "Anio": "2003",
+        "Author": "Gore Verbinski",
+        "description": "Aventura en altamar con piratas y tesoros"
+    }
+]
 
 // ================================
 // Documento con documento incrustado
 // ================================
 // Podemos anidar un objeto dentro de otro
-{
-    "Pelicula": "Matrix",
-    "Anio": "1999",
-    "Author": {
-        "Nombre": "Lana Wachowski",
-        "Nacionalidad": "Estadounidense"
-    },
-    "description": "Película de ciencia ficción"
-}
+[
+    {
+        "Pelicula": "Matrix",
+        "Anio": "1999",
+        "Author": {
+            "Nombre": "Lana Wachowski",
+            "Nacionalidad": "Estadounidense"
+        },
+        "description": "Película de ciencia ficción"
+    }
+]
 
 // ================================
 // Documento con matriz (array)
 // ================================
 // Una matriz puede contener valores simples
-{
-    "Pelicula": "Avengers",
-    "Anio": "2012",
-    "Actores": ["Robert Downey Jr.", "Chris Evans", "Scarlett Johansson"]
-}
+[
+    {
+        "Pelicula": "Avengers",
+        "Anio": "2012",
+        "Actores": ["Robert Downey Jr.", "Chris Evans", "Scarlett Johansson"]
+    }
+]
 
 // ================================
 // Documento con matriz de documentos
 // ================================
 // Una matriz puede contener objetos incrustados
-{
-    "Pelicula": "Inception",
-    "Anio": "2010",
-    "Elenco": [
-        { "Nombre": "Leonardo DiCaprio", "Personaje": "Cobb" },
-        { "Nombre": "Joseph Gordon-Levitt", "Personaje": "Arthur" },
-        { "Nombre": "Ellen Page", "Personaje": "Ariadne" }
-    ]
-}
+[
+    {
+        "Pelicula": "Inception",
+        "Anio": "2010",
+        "Elenco": [
+            { "Nombre": "Leonardo DiCaprio", "Personaje": "Cobb" },
+            { "Nombre": "Joseph Gordon-Levitt", "Personaje": "Arthur" },
+            { "Nombre": "Ellen Page", "Personaje": "Ariadne" }
+        ]
+    }
+]
 
 // ================================
 // Consultas con documentos y arrays incrustados

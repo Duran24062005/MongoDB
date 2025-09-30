@@ -102,7 +102,7 @@ db.movie.find(
 
 
 
-db.prueba.insertMany(
+db.prueba.insertOne(
     {
         "item": "journal",
         "stock": [

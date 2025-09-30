@@ -1,6 +1,6 @@
 # Mongo DB
 
-
+![Pahts](./img/paths.jpeg) 
 ![Mongo DB CRUD Operations](./img/mongoCRUDOPerations.jpeg)
 
 

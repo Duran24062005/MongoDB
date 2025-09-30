@@ -1,0 +1,20 @@
+# Ignorar dependencias
+node_modules/
+
+# Ignorar logs
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Ignorar archivos de entorno
+.env
+.env.local
+.env.*.local
+
+# Ignorar directorios de compilación
+dist/
+build/
+
+# Ignorar sistema operativo
+.DS_Store
+Thumbs.db

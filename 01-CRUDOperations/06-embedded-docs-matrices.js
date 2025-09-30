@@ -99,3 +99,25 @@ db.movie.find(
 // - Arrays pueden guardar listas de valores o documentos
 // - Podemos hacer consultas directas a campos incrustados usando la notación de punto
 // - Proyecciones también funcionan sobre campos dentro de documentos y arrays
+
+
+
+db.prueba.insertMany(
+    {
+        "item": "journal",
+        "stock": [
+            {
+                "warehouse": "A",
+                "qty": 30
+            },
+            {
+                "warehouse": "B",
+                "qty": 3
+            },
+            {
+                "warehouse": "C",
+                "qty": 8
+            }
+        ]
+    }
+);

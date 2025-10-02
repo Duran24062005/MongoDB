@@ -109,3 +109,8 @@ db.tipos.insertOne({
 // ✔ La elección correcta del tipo mejora la integridad
 //   y el rendimiento de las consultas.
 //
+
+
+db.mive.find({anio: {$type: "number"}});
+db.mive.find({Anio: {$type: "double"}});
+db.mive.find({Anio: {$type: "string"}});

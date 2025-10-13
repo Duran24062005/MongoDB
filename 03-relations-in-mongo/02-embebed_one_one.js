@@ -106,7 +106,7 @@ db.address.find({patron_id: idJoe});
 
 
 // ============================
-// Nuevas inserciones
+// Nuevas inserciones y relaciones entre tablas por referencias
 // ============================
 db.patron.insertMany(
     [
@@ -149,9 +149,9 @@ db.address.insertOne(
 );
 
 /**
-     {
-    acknowledged: true,
-    insertedId: ObjectId('68ddec95cde4330c68fa3357')
+    {
+        acknowledged: true,
+        insertedId: ObjectId('68ddec95cde4330c68fa3357')
     }
 */
 
@@ -164,11 +164,11 @@ db.address.findOne(
 
 /**
     {
-    _id: ObjectId('68ddec95cde4330c68fa3357'),
-    patron_id: ObjectId('68ddea8ccde4330c68fa3354'),
-    street: '567 new stree',
-    city: 'Faketon 234',
-    state: 'MA for three',
-    zip: '6789'
+        _id: ObjectId('68ddec95cde4330c68fa3357'),
+        patron_id: ObjectId('68ddea8ccde4330c68fa3354'),
+        street: '567 new stree',
+        city: 'Faketon 234',
+        state: 'MA for three',
+        zip: '6789'
     }
 */

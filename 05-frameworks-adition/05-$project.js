@@ -179,3 +179,36 @@ db.ventas.aggregate([
 // =====================================================
 // 🔚 Fin del documento: Operador $project en MongoDB
 // =====================================================
+
+
+
+
+db.Incautaciones.aggregate(
+    [
+        {
+            $match: {
+                CANTIDAD: {
+                    $gt: 500.0
+                }
+            }
+        }, 
+        {
+            $group: {
+                _id: "$MUNICIPIO",
+                TOTAL: {
+                    $sum: "$CANTIDAD"
+                }
+            }
+        }, 
+        {
+            $sort: {TOTAL: -1}
+        },
+        // ultima etapa, project
+        {
+            $project: {
+                _id: 1,
+                TOTAL: 0
+            }
+        }
+    ]
+);

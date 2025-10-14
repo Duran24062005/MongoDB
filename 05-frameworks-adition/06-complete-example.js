@@ -111,3 +111,40 @@ db.ventas.aggregate([
 // =====================================================
 // 🔚 FIN DEL DOCUMENTO: PIPELINE COMPLETO DE 4 ETAPAS
 // =====================================================
+
+
+
+db.Incautaciones.aggregate(
+    [
+        {
+            $match: {
+                CANTIDAD: {
+                    $gt: 500.0
+                }
+            }
+        }, 
+        {
+            $group: {
+                _id: "$MUNICIPIO",
+                TOTAL: {
+                    $sum: "$CANTIDAD"
+                }
+            }
+        }, 
+        {
+            $sort: {
+                TOTAL: -1
+            }
+        },
+        // ultima etapa, project
+        {
+            $project: {
+                MUNICIPIO: "$_id",
+                _id: 0,
+                // tambien se pueden crear nuevos campos
+                nuevo_campo: {$concat: ["Este es un campo ", "nuevo - ", {$toString: "$TOTAL"}]},
+                TOTAL: 1,
+            }
+        }
+    ]
+);

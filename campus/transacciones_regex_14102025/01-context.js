@@ -119,13 +119,17 @@ db.Incautaciones.find({
 
 
 // 9. Encuentra municipios cuyo nombre tenga exactamente 6 letras.
-
+db.Incautaciones.find({
+    MUNICIPIO: {$regex: /^[A-ZÁÉÍÓÍÚ]{6}$/i}
+});
 
 
 
 
 // 10. Filtra los municipios cuyo nombre tenga 2 palabras.
-
+db.Incautaciones.find({
+    MUNICIPIO: {$regex: /^[A-ZÁÉÍÓÍÚ]+ [A-ZÁÉÍÓÍÚ]+$/i}
+});
 
 
 

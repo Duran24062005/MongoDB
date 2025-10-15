@@ -1,5 +1,5 @@
 // Seleccionar (o crear) la base de datos
-use crud_demo;
+use ('crud_demo');
 
 // Limpiar la colección si ya existía
 db.usuarios.drop();

@@ -1,10 +1,17 @@
 # MongoDB 2 - Transacciones con Regex
 Pedro Felipe Gomez Bonilla • 14/10/2025 - 12:04 p.m.
 
+## Contexto
+
+Para está activadad se está utilizando la base de datos **test** dicha base de datos es la contiene los mismos datos de *Incautaciones* referencia a la base de datos. Sobre está
+base de datos serán ejecutados todos los comandos y se llevará a cabo la realización de está actividad.
+
+## Actividad dejada por el docente
+
 Estimados Campers, un cordial saludo.
 Por favor realizar los siguientes ejercicios , donde se apliquen transacciones :
 
-## Ejercicios básicos
+### Ejercicios básicos
 
 1. Encuentra todos los municipios que empiezan por “San”.
 2. Lista los municipios que terminan en “ito”.
@@ -14,7 +21,7 @@ Por favor realizar los siguientes ejercicios , donde se apliquen transacciones :
 
 ⸻
 
-## Ejercicios intermedios
+### Ejercicios intermedios
 
 6. Encuentra los municipios cuyo nombre contenga dos vocales seguidas.
 7. Obtén todos los municipios con nombres que contengan la letra “z”.
@@ -24,7 +31,7 @@ Por favor realizar los siguientes ejercicios , donde se apliquen transacciones :
 
 ⸻
 
-## Ejercicios avanzados
+### Ejercicios avanzados
 
 11. Encuentra municipios cuyos nombres terminen en “ito” o “ita”.
 12. Lista los municipios que contengan la sílaba “gua” en cualquier posición.
@@ -34,7 +41,7 @@ Por favor realizar los siguientes ejercicios , donde se apliquen transacciones :
 
 ⸻
 
-## Ejercicios aplicados a pipelines
+### Ejercicios aplicados a pipelines
 
 16. Muestra la cantidad total incautada en municipios que empiezan con “La”.
 17. Calcula el total de incautaciones en municipios cuyo nombre termine en “co”.

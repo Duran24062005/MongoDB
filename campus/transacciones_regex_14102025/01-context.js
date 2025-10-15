@@ -199,6 +199,88 @@ db.Incautaciones.find({
 
 
 
+// =======================================================================================================================================================================================
+
+// ###############################
+// Ejercicios Avanzados
+// ###############################
+
+
+// 16. Muestra la cantidad total incautada en municipios que empiezan con “La”.
+db.Incautaciones.aggregate([
+    {$match: {MUNICIPIO: /^La/i}},
+    {$group: {
+        _id: null,
+        total_incautado: {$sum: "$CANTIDAD"}
+    }},
+    {
+        $project: {_id: 0,
+            municipio: "todos los municipios que comienzan con La",
+            total_incautado: 1
+        }
+    }
+]);
+// 
+
+
+
+// 17. Calcula el total de incautaciones en municipios cuyo nombre termine en “co”.
+db.Incautaciones.aggregate([
+    {$match: {MUNICIPIO: /^CO/i}},
+    {$group: {
+        _id: null,
+        total_incautado: {$sum: "$CANTIDAD"}
+    }},
+    { $project: {
+            _id: 0,
+            municipio: "todos los municipios que comienzan con La",
+            total_incautado: 1
+        }
+    }
+]);
+
+
+
+
+// 18. Obtén el top 5 de municipios con más incautaciones cuyo nombre contenga la letra “y”.
+db.Incautaciones.aggregate([
+    {$match: {
+        MUNICIPIO: /^Y/i,
+    }
+    },
+    {$group: {
+        _id: "$MUNICIPIO",
+        total_incautado: {$sum: "$CANTIDAD"}
+    }},
+    {$sort: {
+        total_incautado: -1
+    }},
+    { $project: {
+            _id: 0,
+            municipio: "todos los municipios que comienzan con La",
+            total_incautado: 1
+        }
+    }
+]);
+
+
+
+
+// 19. Encuentra los municipios que empiecen por “San” y agrupa la cantidad incautada por año.
+
+
+
+
+
+// 20. Lista los departamentos que tengan al menos un municipio cuyo nombre termine en “ito” o “ita”, y muestra la cantidad total incautada en ellos.
+
+
+
+
+
+
+
+
 session.commitTransaction();
 
 session.endSession();

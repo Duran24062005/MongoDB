@@ -5,6 +5,17 @@
 // Selección y uso de la base de datos
 use("test");
 
+
+// Inicio de session para generar los cambios
+const session = db.getMongo().startSession();
+
+
+const incautaciones = session.getDatabase("test").Incautaciones;
+
+session.startTransaction();
+
+
+
 // Mediante el comando import o por compass se importaron los datos desde un csv 
 // ubicado en la siguiente ruta *https://github.com/Duran24062005/MongoDB/blob/main/campus/incautaciones_ma_20250930/INCAUTACIONES_DE_MA_20250930.csv*
 // ya con todos esos datos cargados en la base de datos y centralizados en una sola collección procedemos a ejecutar los comandos
@@ -133,3 +144,64 @@ db.Incautaciones.find({
 
 
 
+// =======================================================================================================================================================================================
+
+// ###############################
+// Ejercicios Avanzados
+// ###############################
+
+// 11. Encuentra municipios cuyos nombres terminen en “ito” o “ita”.
+db.Incautaciones.find({
+    MUNICIPIO: {$regex: /(ito|ita)$/i}
+});
+
+/*
+    Santa Rita ❌ OJO: sí contiene “ita” pero no al final del nombre completo si tenemos más palabras; si quieremos incluir esos casos, habría que ajustar la regex.
+*/
+db.Incautaciones.find({
+    MUNICIPIO: {$regex: /(\bito\b|ita\b)$/i}
+});
+
+
+// 12. Lista los municipios que contengan la sílaba “gua” en cualquier posición.
+db.Incautaciones.find({
+    MUNICIPIO: {$regex: /gua/i}
+});
+
+
+
+
+
+// 13. Devuelve los municipios que empiecen por “Puerto” y terminen en “o”.
+db.Incautaciones.find({
+    MUNICIPIO: {$regex: /^Puerto o$/i}
+});
+
+
+
+
+// 14. Encuentra municipios con nombres que tengan más de 10 caracteres.
+db.Incautaciones.find({
+    MUNICIPIO: {$regex: /^[A-ZAEIOUÁÉÍÓÚ]{11,}$/i}
+});
+
+
+
+
+// 15. Busca municipios que no contengan vocales.
+db.Incautaciones.find({
+    MUNICIPIO: {$regex: /^[^AEIOUÁÉÍÓÚ]$/i}
+});
+
+db.Incautaciones.find({
+    MUNICIPIO: {$regex: /^[^AEIOUÁÉÍÓÚ]+$/}
+});
+
+
+
+session.commitTransaction();
+
+session.endSession();
+
+
+// Desarrollado por Alexi Duran Gomez: C.c 1.067.031.983

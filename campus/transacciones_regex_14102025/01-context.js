@@ -255,9 +255,12 @@ db.Incautaciones.aggregate([
     {$sort: {
         total_incautado: -1
     }},
+    {
+        $limit: 5
+    },
     { $project: {
             _id: 0,
-            municipio: "todos los municipios que comienzan con La",
+            municipio: "$_id",
             total_incautado: 1
         }
     }

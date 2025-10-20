@@ -31,17 +31,3 @@ erDiagram
 - 📚 [Documentación](https://docs.google.com/document/d/1nwijOu7kT1J5EZ9AG5ys61OBG4a-kbuw/edit?usp=sharing&ouid=114885156140019858076&rtpof=true&sd=true)
 
 Desarrollado por ALexi Durán Gómez C.c: 1.067.031.983
-
-
-
-# Listado Colegios Oficiales 20251016
-
-```mermaid
-erDiagram
-    INSTITUCION_EDUCATIVA ||--|| TIPO_ESTABLECIMIENTO : "pertenece a"
-    INSTITUCION_EDUCATIVA ||--|| SECTOR : "pertenece a"
-    INSTITUCION_EDUCATIVA ||--|| ZONA : "ubicada en"
-    INSTITUCION_EDUCATIVA ||--|| ESTADO_INSTITUCION : "tiene estado"
-    INSTITUCION_EDUCATIVA ||--o{ PERSONAL : "cuenta con"
-    PERSONAL }o--|| CARGO_PERSONAL : "ocupa"
-...

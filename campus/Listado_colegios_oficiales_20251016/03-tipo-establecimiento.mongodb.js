@@ -27,5 +27,8 @@ db.DataCompleta.aggregate([
           _id: 0,
           tipo_establecimiento: "$_id",
         }
+    },
+    {
+        $out: "TiposEstablecimiento"
     }
 ]);

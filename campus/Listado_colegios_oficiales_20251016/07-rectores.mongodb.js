@@ -11,11 +11,8 @@ db.DataCompleta.aggregate([
           nombre_rector: {$ne: null, $ne: ""}
         }
     },{
-        $lookup: {
-          from: "Establecimientos",
-          localField: field,
-          foreignField: field,
-          as: result
+        $group: {
+          _id: "$nombre_rector"
         }
     }
 ]);
